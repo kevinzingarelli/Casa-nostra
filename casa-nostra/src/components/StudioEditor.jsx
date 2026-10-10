@@ -8,6 +8,7 @@ import FloorPlan from './FloorPlan'
 import DreamsPanel from './DreamsPanel'
 import MaterialsPanel from './MaterialsPanel'
 import VersionsPanel from './VersionsPanel'
+import ViewBoundary from './ViewBoundary'
 const VillaView=lazy(()=>import('./VillaView'))
 
 export default function StudioEditor({projectId,local=false,onBack}) {
@@ -56,7 +57,7 @@ export default function StudioEditor({projectId,local=false,onBack}) {
     {d.lot===22&&<div className="local-notice"><p>Puoi partire dalla nuova villa su tre livelli e giardino. Conserveremo questa pianta tra le versioni e manterremo le note dei tuoi desideri.</p><button className="btn secondary" onClick={fullVilla}>Prova la villa completa</button></div>}
     <nav className="studio-tabs" aria-label="Viste del progetto">{[['view','Esplora 3D'],['plan','Disegna'],['dreams','Desideri'],['versions','Confronta'],['style','Stile e materiali']].map(([id,label])=><button key={id} aria-current={tab===id?'page':undefined} className={tab===id?'active':''} onClick={()=>setTab(id)}>{label}</button>)}</nav>
     <div className="floor-tabs" aria-label="Piani della villa">{FLOORS.map(f=><button key={f.id} aria-pressed={floor===f.id} onClick={()=>{setFloor(f.id);setSelected('')}}>{f.name}<small>{d.rooms.filter(r=>r.floor===f.id).length}</small></button>)}</div>
-    {tab==='view'&&<><Suspense fallback={<p>Preparo la tua villa…</p>}><VillaView data={d} floor={floor}/></Suspense>{unplaced>0&&<button className="btn secondary" onClick={()=>setTab('dreams')}>{unplaced} desideri da collocare negli ambienti</button>}</>}
+    {tab==='view'&&<><ViewBoundary><Suspense fallback={<p role="status">Preparo la tua villa…</p>}><VillaView data={d} floor={floor}/></Suspense></ViewBoundary>{unplaced>0&&<button className="btn secondary" onClick={()=>setTab('dreams')}>{unplaced} desideri da collocare negli ambienti</button>}</>}
     {tab==='plan'&&<section><FloorPlan rooms={rooms} lot={d.lot} selectedId={selected} onSelect={setSelected} onMove={(id,x,y)=>changeRoom(id,{x,y})}/>
       {room&&<div className="card panel-pad room-fields"><label>Nome dell’ambiente<input className="input" value={room.name||roomType(room.type).name} onChange={e=>changeRoom(room.id,{name:e.target.value})}/></label><label>Piano<select value={room.floor} onChange={e=>{changeRoom(room.id,{floor:Number(e.target.value)});setFloor(Number(e.target.value))}}>{FLOORS.map(f=><option key={f.id} value={f.id}>{f.name}</option>)}</select></label><div className="measure-grid">{[['w','Larghezza'],['l','Profondità'],['x','Posizione X'],['y','Posizione Y']].map(([key,label])=><label key={key}>{label} (m)<input type="number" min={['w','l'].includes(key)?1:0} max={d.lot} step="0.5" value={room[key]} onChange={e=>numberRoom(key,e.target.value)}/></label>)}</div><p className="muted">{room.w*room.l} m² · Puoi anche trascinare l’ambiente sulla pianta.</p></div>}
       {room&&<div className="room-remove"><button className="btn secondary" onClick={removeRoom}>Togli questo ambiente dalla pianta</button><p className="muted">Una copia della pianta attuale resterà tra le versioni.</p></div>}
@@ -65,7 +66,7 @@ export default function StudioEditor({projectId,local=false,onBack}) {
       <p className="dream-note">Lotto di lavoro {d.lot} × {d.lot} m. Le stanze possono sovrapporsi durante le prove: la disposizione definitiva va verificata.</p>
     </section>}
     {tab==='dreams'&&<DreamsPanel dreams={d.dreams} rooms={d.rooms} onChange={(id,value)=>update({...d,dreams:{...d.dreams,[id]:value}})}/>}
-    {tab==='versions'&&<VersionsPanel data={d} floor={floor} onChange={update}/>}
+    {tab==='versions'&&<ViewBoundary><VersionsPanel data={d} floor={floor} onChange={update}/></ViewBoundary>}
     {tab==='style'&&<section><div className="dream-heading"><h2>L’atmosfera di casa</h2><p>Finiture e luce cambiano subito nella vista 3D e restano nelle versioni.</p></div><div className="style-grid">{Object.entries(STYLES).map(([id,p])=><button className={'card style-pick '+(d.style===id?'active':'')} key={id} onClick={()=>update({...d,style:id})}><span style={{background:`linear-gradient(135deg,${p.wall} 33%,${p.floor} 33%,${p.floor} 66%,${p.accent} 66%)`}}/>{p.name}</button>)}</div><label className="field">Luce<select value={d.lighting} onChange={e=>update({...d,lighting:e.target.value})}><option value="giorno">Giorno</option><option value="sera">Sera, luci calde</option></select></label><label className="field">Nome del progetto<input className="input" value={row.name} onChange={e=>{dirty.current=true;setRow({...row,name:e.target.value})}}/></label><MaterialsPanel rooms={d.rooms.filter(r=>r.floor!==2)} materials={d.materials} onChange={(g,o)=>update({...d,materials:{...d.materials,[g]:o}})} onWindows={n=>update({...d,materials:{...d.materials,windows:n}})}/><p className="dream-note">Il listino storico riguarda solo una stima parziale dei materiali. Non comprende terreno, esterni, arredi, spa e desideri speciali e non rappresenta il budget della villa.</p></section>}
     <footer className="app-footer">Casa Nostra · un prodotto Kesia s.r.l.</footer>
   </main></div>

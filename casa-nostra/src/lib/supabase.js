@@ -2,6 +2,7 @@ import { createClient } from '@supabase/supabase-js'
 
 const url = import.meta.env.VITE_SUPABASE_URL
 const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+export const PROJECTS_TABLE = import.meta.env.VITE_PROJECTS_TABLE || 'projects'
 
 // L'app non deve mai crashare se le chiavi non sono ancora impostate su Vercel.
 // Mostriamo invece un messaggio chiaro all'utente (ConfigNotice).

@@ -1,0 +1,7 @@
+{
+  "framework": null,
+  "installCommand": "npm --prefix casa-nostra ci",
+  "buildCommand": "npm --prefix casa-nostra run build",
+  "outputDirectory": "casa-nostra/dist",
+  "rewrites": [{ "source": "/((?!assets/).*)", "destination": "/index.html" }]
+}

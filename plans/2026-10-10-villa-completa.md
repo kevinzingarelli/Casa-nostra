@@ -1,7 +1,7 @@
 # Piano: Villa completa e condivisa
 
 **Creato:** 2026-10-10
-**Stato:** Approvato da Kevin: «Perfetto falli tutti»; in corso.
+**Stato:** Quattro interventi implementati e pubblicati; quinto preparato, bloccato dalla quota cloud e in attesa della scelta di Kevin sull’archivio separato.
 **Richiesta:** Realizzare i cinque miglioramenti proposti in chat.
 
 ## Cosa realizza
@@ -28,12 +28,15 @@ Nessuna per gli interventi approvati. Eventuali costi o credenziali nuove sarann
 6. Test dati, build, prove UI desktop e mobile emulato, pubblicazione e verifica online.
 
 ## Come verificare
-- [ ] Vecchi progetti e note conservati.
-- [ ] Piani, esterni e sedici desideri visualizzati e modificabili.
-- [ ] Visita con ingresso in stanza, movimento e uscita.
-- [ ] Versioni isolate e confronto funzionante.
+- [x] Vecchi progetti e note conservati.
+- [x] Piani, esterni e sedici desideri visualizzati e modificabili.
+- [x] Visita con ingresso in stanza, movimento e uscita.
+- [x] Versioni isolate e confronto funzionante.
 - [ ] Scrittura e lettura condivisa verificate; nessuna sovrascrittura silenziosa.
-- [ ] Build, test e UI a 320/390/560 pixel.
+- [x] Build, test e UI a 320/390/560 pixel.
 
 ## È finito quando
 Le cinque funzioni sono utilizzabili e verificate online; eventuali limiti reali sono distinti da ciò che è concluso.
+
+## Note di implementazione
+La riattivazione gratuita autorizzata da Kevin è stata impedita da Supabase: due progetti gratuiti già attivi (Boschetto e Casa Points). Proposto un archivio separato nel progetto Casa Points, consenso pendente. SQL predisposto, non eseguito; condivisione non attiva. Rapporto: `casa-nostra/reports/verifica-v2-2026-10-10.md`.

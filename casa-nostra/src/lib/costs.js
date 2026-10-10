@@ -1,4 +1,4 @@
-import { roomArea } from './rooms'
+import { roomArea } from './rooms.js'
 
 // IMPORTANTE: prezzi INDICATIVI a scopo di stima, non preventivi reali.
 // Valori orientativi per il mercato italiano (€/m² sulla superficie, o a corpo/unità).

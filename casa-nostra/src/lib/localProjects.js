@@ -1,3 +1,4 @@
+import { makeVilla } from './villa.js'
 const KEY = 'casa-nostra:projects:v1'
 export function listLocalProjects(storage = localStorage) {
   const raw = storage.getItem(KEY)
@@ -15,14 +16,7 @@ export function saveLocalProject(project, storage = localStorage) {
 }
 export function createLocalProject() {
   return {
-    id: crypto.randomUUID(), name: 'La casa dei sogni', house_type: 'villa', updated_at: new Date().toISOString(),
-    data: { rooms: [
-      { id: crypto.randomUUID(), type: 'soggiorno', x: 2, y: 2, w: 7, l: 6 },
-      { id: crypto.randomUUID(), type: 'cucina', x: 9, y: 2, w: 5, l: 6 },
-      { id: crypto.randomUUID(), type: 'camera', x: 2, y: 8, w: 5, l: 5 },
-      { id: crypto.randomUUID(), type: 'bagno', x: 7, y: 8, w: 3, l: 3 },
-      { id: crypto.randomUUID(), type: 'studio', x: 10, y: 8, w: 4, l: 5 },
-    ], materials: {} },
+    id: crypto.randomUUID(), name: 'La casa dei sogni', house_type: 'villa', updated_at: new Date().toISOString(), data:makeVilla(),
   }
 }
 export function downloadProject(project) {

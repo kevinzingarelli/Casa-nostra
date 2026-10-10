@@ -1,6 +1,18 @@
 // Tipi di stanza disponibili. Ogni tipo ha un colore (per la planimetria)
 // e dimensioni di default in metri.
 export const ROOM_TYPES = [
+  { id:'cinema', name:'Cinema', color:'#605783', w:7, l:6 },
+  { id:'palestra', name:'Palestra', color:'#407779', w:6, l:6 },
+  { id:'spa', name:'Spa', color:'#367d90', w:10, l:8 },
+  { id:'taverna', name:'Tavernetta', color:'#9d6a4d', w:6, l:6 },
+  { id:'giochi', name:'Giochi', color:'#bb6a40', w:6, l:5 },
+  { id:'dispensa', name:'Dispensa', color:'#967440', w:4, l:4 },
+  { id:'piscina', name:'Piscina', color:'#2186a1', w:10, l:5 },
+  { id:'giardino', name:'Giardino', color:'#4d7941', w:10, l:8 },
+  { id:'campetto', name:'Campetto', color:'#477853', w:12, l:8 },
+  { id:'orto', name:'Orto', color:'#687840', w:4, l:6 },
+  { id:'barbecue', name:'Barbecue', color:'#995d38', w:5, l:3 },
+  { id:'vialetto', name:'Vialetto', color:'#74736b', w:5, l:8 },
   { id: 'soggiorno', name: 'Soggiorno', color: '#2e3fa8', w: 5, l: 4 },
   { id: 'cucina', name: 'Cucina', color: '#b45309', w: 4, l: 3 },
   { id: 'camera', name: 'Camera', color: '#7c3aed', w: 4, l: 3.5 },
@@ -16,7 +28,7 @@ export const ROOM_TYPES = [
 ]
 
 export function roomType(id) {
-  return ROOM_TYPES.find((r) => r.id === id) || ROOM_TYPES[0]
+  return ROOM_TYPES.find((r) => r.id === id) || ROOM_TYPES.find(r => r.id === 'soggiorno')
 }
 
 // Area totale (m²) calpestabile = somma area stanze "interne".

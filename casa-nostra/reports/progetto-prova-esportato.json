@@ -1,0 +1,126 @@
+{
+  "id": "78f81476-b763-42d5-9eb2-539d81e351f9",
+  "name": "La casa dei sogni",
+  "house_type": "villa",
+  "updated_at": "2026-10-10T11:35:19.886Z",
+  "data": {
+    "rooms": [
+      {
+        "id": "72d284f9-3781-4a7c-b269-3b0fa962df61",
+        "type": "soggiorno",
+        "x": 2,
+        "y": 2,
+        "w": 7,
+        "l": 6
+      },
+      {
+        "id": "72859397-194e-4f6d-9070-cdee0a6c2110",
+        "type": "cucina",
+        "x": 9,
+        "y": 2,
+        "w": 5,
+        "l": 6
+      },
+      {
+        "id": "f7765e30-39b1-4cf1-abee-cd7c13eac2d4",
+        "type": "camera",
+        "x": 2,
+        "y": 8,
+        "w": 5,
+        "l": 5
+      },
+      {
+        "id": "d4825e3b-98cf-4476-aa94-f0a5bb932894",
+        "type": "bagno",
+        "x": 7,
+        "y": 8,
+        "w": 3,
+        "l": 3
+      },
+      {
+        "id": "47f1f9ab-8e64-4109-be89-ba372c772e8d",
+        "type": "studio",
+        "x": 10,
+        "y": 8,
+        "w": 4,
+        "l": 5
+      }
+    ],
+    "materials": {
+      "fondamenta": "platea",
+      "struttura": "laterizio",
+      "tetto": "tegole",
+      "isolamento": "cappotto",
+      "finestre": "pvc2",
+      "energia": "nessuno",
+      "riscaldamento": "gas",
+      "windows": 8
+    },
+    "dreams": {
+      "scivolo": {
+        "included": true,
+        "note": ""
+      },
+      "porta-segreta": {
+        "included": true,
+        "note": ""
+      },
+      "salotto-ribassato": {
+        "included": true,
+        "note": ""
+      },
+      "frigo": {
+        "included": true,
+        "note": ""
+      },
+      "bonsai": {
+        "included": true,
+        "note": ""
+      },
+      "avventura": {
+        "included": true,
+        "note": ""
+      },
+      "vialetto": {
+        "included": true,
+        "note": ""
+      },
+      "bilico": {
+        "included": true,
+        "note": ""
+      },
+      "fiume": {
+        "included": true,
+        "note": ""
+      },
+      "scalinata": {
+        "included": true,
+        "note": ""
+      },
+      "baldacchino": {
+        "included": true,
+        "note": ""
+      },
+      "dispensa": {
+        "included": true,
+        "note": ""
+      },
+      "prese": {
+        "included": true,
+        "note": ""
+      },
+      "scala-albero": {
+        "included": true,
+        "note": ""
+      },
+      "casa-albero": {
+        "included": true,
+        "note": ""
+      },
+      "garage-interrato": {
+        "included": true,
+        "note": ""
+      }
+    }
+  }
+}

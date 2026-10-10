@@ -1,10 +1,15 @@
 import * as T from 'three'
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js'
+
+function soft(g,x,y,z,w,h,d,color) {
+  const m=new T.Mesh(new RoundedBoxGeometry(w,h,d,3,Math.min(.09,h/3)),new T.MeshPhysicalMaterial({color,roughness:.94,sheen:.6,sheenColor:new T.Color(color)}));m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;g.add(m);return m
+}
 
 export function box(g,x,y,z,w,h,d,color, options={}) {
   const mesh=new T.Mesh(new T.BoxGeometry(w,h,d),new T.MeshStandardMaterial({color,roughness:.72,...options})); mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;g.add(mesh);return mesh
 }
 function cylinder(g,x,y,z,r,h,color,r2=r) {
-  const m=new T.Mesh(new T.CylinderGeometry(r,r2,h,24),new T.MeshStandardMaterial({color,roughness:.7}));m.position.set(x,y,z);m.castShadow=true;g.add(m);return m
+  const m=new T.Mesh(new T.CylinderGeometry(r,r2,h,48),new T.MeshStandardMaterial({color,roughness:.7}));m.position.set(x,y,z);m.castShadow=true;g.add(m);return m
 }
 function ball(g,x,y,z,r,color) {
   const m=new T.Mesh(new T.SphereGeometry(r,12,10),new T.MeshStandardMaterial({color,roughness:.9}));m.position.set(x,y,z);m.castShadow=true;g.add(m);return m
@@ -34,7 +39,12 @@ export function dreamModel(id) {
     case 'porta-segreta':
       shelves(g,-.6,0);{const door=new T.Group();shelves(door,.85,0);door.rotation.y=-.65;g.add(door)}box(g,.5,1,-.5,1.1,2.1,.1,'#263d37');break
     case 'salotto-ribassato':
-      box(g,0,.04,0,3.4,.08,3.4,'#8b7664');box(g,0,.2,-1.3,3,.4,.7,'#c9bdb0');box(g,-1.3,.2,0,.7,.4,3,'#c9bdb0');box(g,1.3,.2,0,.7,.4,3,'#c9bdb0');box(g,0,.24,0,1.1,.45,.8,'#735343');break
+      box(g,0,.04,0,3.4,.08,3.4,'#8b7664');
+      soft(g,0,.23,-1.3,3,.38,.7,'#d6cbb9');soft(g,-1.3,.23,0,.7,.38,3,'#d6cbb9');soft(g,1.3,.23,0,.7,.38,3,'#d6cbb9');
+      soft(g,0,.65,-1.59,3.2,.66,.22,'#d6cbb9');for(const x of [-1.59,1.59])soft(g,x,.65,0,.22,.66,3.2,'#d6cbb9');
+      for(const x of [-.98,0,.98]){soft(g,x,.45,-1.28,.92,.16,.66,'#e7decb');soft(g,x,.79,-1.46,.58,.44,.14,'#8b9376').rotation.x=-.15}
+      for(const side of [-1,1])for(const z of [-.3,.55,1.3])soft(g,side*1.29,.45,z,.66,.16,.78,'#e7decb');
+      cylinder(g,0,.27,0,.52,.44,'#9e8263');cylinder(g,0,.51,0,.67,.07,'#d0bc9c');box(g,-.16,.57,.1,.33,.035,.22,'#74745f');cylinder(g,.2,.64,-.13,.07,.19,'#a8a08a');break
     case 'frigo':
       box(g,0,1.3,-1.2,2.8,2.6,.12,'#b8ced2');box(g,-1.35,1.3,0,.12,2.6,2.4,'#dce6e7');shelves(g,0,-1);box(g,1.3,1.3,0,.08,2.6,2.4,'#afd9e1',{transparent:true,opacity:.35});break
     case 'bonsai':cylinder(g,0,.3,0,.75,.6,'#b79c79');tree(g,0,0,.55);break
@@ -50,7 +60,7 @@ export function dreamModel(id) {
     }
     case 'scalinata':for(const side of [-1,1])for(let i=0;i<12;i++){const a=i*Math.PI/22;const step=box(g,side*(.6+Math.cos(a)*1.15),.12+i*.12,1.3-i*.24,1,.24+i*.24,.3,'#c6b395');step.rotation.y=side*a*.4}box(g,0,2.8,-1.5,2.4,.18,.8,'#c6b395');break
     case 'baldacchino':
-      cylinder(g,0,.35,0,1.4,.7,'#c2ac91');cylinder(g,0,.75,0,1.35,.15,'#eee4d5');for(const x of [-1.4,1.4])for(const z of [-1.4,1.4])box(g,x,1.4,z,.05,2.8,.05,'#7e6242');box(g,0,2.8,0,3,.05,3,'#ece2cf');for(const x of [-1.4,1.4])box(g,x,1.6,0,.03,2.4,2.7,'#ece2cf',{transparent:true,opacity:.4});break
+      cylinder(g,0,.3,0,1.4,.5,'#c2ac91');cylinder(g,0,.63,0,1.35,.23,'#eee4d5');for(const x of [-1.4,1.4])for(const z of [-1.4,1.4])box(g,x,1.4,z,.05,2.8,.05,'#7e6242');box(g,0,2.8,0,3,.04,3,'#ece2cf');for(const x of [-.48,.48])soft(g,x,.82,-.55,.82,.18,.53,'#f5ecdd');soft(g,0,.77,.48,2.13,.06,.75,'#a5a288');for(const x of [-1.4,1.4])for(let i=0;i<8;i++)box(g,x+Math.sin(i*2)*.045,1.6,-1.4+i*.07,.04,2.4,.08,'#ece2cf',{transparent:true,opacity:.7});break
     case 'dispensa':shelves(g,0,-1.1);{const s=new T.Group();shelves(s);s.rotation.y=Math.PI/2;s.position.x=-1.2;g.add(s)}box(g,.6,.8,.5,1,.08,1.3,'#c8b395');break
     case 'prese':box(g,0,.45,0,.6,.45,.08,'#ded4c1');for(const x of [-.12,.12])for(const y of [.39,.48])cylinder(g,x,y,.06,.025,.03,'#6e675a').rotation.x=Math.PI/2;break
     case 'scala-albero':tree(g);for(let i=0;i<22;i++){const a=i*.26;box(g,Math.cos(a)*1.1,.1+i*.14,Math.sin(a)*1.1,.85,.1,.35,'#b49772').rotation.y=-a}break

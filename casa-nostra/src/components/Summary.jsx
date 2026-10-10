@@ -50,7 +50,7 @@ export default function Summary({ rooms, materials, houseType, onBuild }) {
       </div>
 
       <button className="btn accent" style={{ marginTop: 16 }} onClick={onBuild} disabled={rooms.length === 0}>
-        <Hammer size={18} /> Costruisci la casa
+        <Hammer size={18} /> Animazione illustrativa
       </button>
 
       <div className="disclaimer">

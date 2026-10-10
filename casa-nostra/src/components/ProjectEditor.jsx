@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { ChevronLeft, LayoutGrid, Box, Receipt, Plus, Trash2, Minus, Hammer, Users } from 'lucide-react'
 import { supabase } from '../lib/supabase'
 import { ROOM_TYPES, roomType } from '../lib/rooms'
@@ -8,10 +8,14 @@ import MaterialsPanel from './MaterialsPanel'
 import Summary from './Summary'
 import Sheet from './Sheet'
 import ConstructionAnimation from './ConstructionAnimation'
+import DreamsPanel from './DreamsPanel'
+import { initialDreams } from '../lib/dreams'
+import { listLocalProjects, saveLocalProject, downloadProject } from '../lib/localProjects'
+const HouseView = lazy(() => import('./HouseView'))
 
 const LOT = 22
 
-export default function ProjectEditor({ projectId, onBack }) {
+export default function ProjectEditor({ projectId, onBack, local = false }) {
   const [loaded, setLoaded] = useState(false)
   const [error, setError] = useState('')
   const [name, setName] = useState('')
@@ -23,6 +27,12 @@ export default function ProjectEditor({ projectId, onBack }) {
   const [addOpen, setAddOpen] = useState(false)
   const [building, setBuilding] = useState(false)
   const [liveEdit, setLiveEdit] = useState(false)
+  const [dreams, setDreams] = useState(initialDreams)
+  const [saveStatus, setSaveStatus] = useState('')
+  const original = useRef(null)
+  const saved = useRef('')
+  const saveQueue = useRef(Promise.resolve())
+  const current = useRef(null)
 
   const applyingRemote = useRef(false)
   const pendingSave = useRef(false)
@@ -32,47 +42,80 @@ export default function ProjectEditor({ projectId, onBack }) {
   useEffect(() => {
     let active = true
     async function load() {
-      const { data, error } = await supabase.from('projects').select('*').eq('id', projectId).single()
-      if (!active) return
-      if (error) { setError('Impossibile aprire il progetto.'); setLoaded(true); return }
-      applyData(data)
-      setLoaded(true)
+      try {
+        const result = local ? { data: listLocalProjects().find(p => p.id === projectId) } : await supabase.from('projects').select('*').eq('id', projectId).single()
+        if (!active) return
+        if (result.error || !result.data) throw new Error('Impossibile aprire il progetto. Riprova senza modificare i dati.')
+        applyData(result.data)
+        setLoaded(true)
+      } catch (e) { if (active) setError(e.message) }
     }
     load()
     return () => { active = false }
-  }, [projectId])
+  }, [projectId, local])
 
   function applyData(row) {
+    original.current = row
     setName(row.name || 'Casa senza nome')
     setHouseType(row.house_type || 'villa')
     const d = row.data || {}
     setRooms(Array.isArray(d.rooms) ? d.rooms : [])
     setMaterials({ ...DEFAULT_MATERIALS, ...(d.materials || {}) })
+    setDreams(d.dreams || initialDreams())
+    saved.current = JSON.stringify({ name: row.name || 'Casa senza nome', houseType: row.house_type || 'villa', rooms: Array.isArray(d.rooms) ? d.rooms : [], materials: { ...DEFAULT_MATERIALS, ...(d.materials || {}) }, dreams: d.dreams || initialDreams() })
     lastUpdatedAt.current = row.updated_at
   }
+  current.current = { name, houseType, rooms, materials, dreams }
 
   // ---- Salvataggio automatico (debounce) ----
   useEffect(() => {
     if (!loaded) return
     if (applyingRemote.current) { applyingRemote.current = false; return }
+    if (JSON.stringify(current.current) === saved.current) return
     pendingSave.current = true
+    setSaveStatus('Salvataggio…')
+    if (local) { save(); return }
     const id = setTimeout(save, 700)
     return () => clearTimeout(id)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rooms, materials, name, houseType, loaded])
+  }, [rooms, materials, name, houseType, dreams, loaded])
 
-  async function save() {
-    const updated_at = new Date().toISOString()
-    const { error } = await supabase
-      .from('projects')
-      .update({ name, house_type: houseType, data: { rooms, materials }, updated_at })
-      .eq('id', projectId)
-    pendingSave.current = false
-    if (!error) lastUpdatedAt.current = updated_at
+  function save() {
+    if (!original.current) return Promise.resolve(false)
+    const snapshot = { ...current.current }
+    const serialized = JSON.stringify(snapshot)
+    const run = async () => {
+      const updated_at = new Date().toISOString()
+      const row = { ...original.current, name: snapshot.name, house_type: snapshot.houseType, data: { ...original.current.data, rooms: snapshot.rooms, materials: snapshot.materials, dreams: snapshot.dreams }, updated_at }
+      try {
+        if (local) saveLocalProject(row)
+        else {
+          const result = await supabase.from('projects').update({ name: row.name, house_type: row.house_type, data: row.data, updated_at }).eq('id', projectId).select('id').single()
+          if (result.error || !result.data) throw new Error('Salvataggio non confermato')
+        }
+        original.current = row; saved.current = serialized; lastUpdatedAt.current = updated_at
+        pendingSave.current = JSON.stringify(current.current) !== serialized
+        setSaveStatus(pendingSave.current ? 'Salvataggio…' : local ? 'Salvato sul dispositivo' : 'Salvato online')
+        setError(''); return true
+      } catch {
+        pendingSave.current = true; setSaveStatus('Da salvare')
+        setError('Non è stato possibile salvare. Riprova oppure esporta una copia prima di uscire.'); return false
+      }
+    }
+    saveQueue.current = saveQueue.current.then(run, run)
+    return saveQueue.current
   }
+  async function leave() { if (JSON.stringify(current.current) === saved.current && !pendingSave.current) onBack(); else if (await save()) onBack() }
+  function exportCopy() { downloadProject({ ...original.current, name, house_type: houseType, data: { ...original.current?.data, rooms, materials, dreams } }) }
+  useEffect(() => {
+    const warn = e => { if (pendingSave.current) { e.preventDefault(); e.returnValue = '' } }
+    window.addEventListener('beforeunload', warn)
+    return () => window.removeEventListener('beforeunload', warn)
+  }, [])
 
   // ---- Realtime: modifiche degli altri ----
   useEffect(() => {
+    if (local) return
     const ch = supabase
       .channel('project-' + projectId)
       .on(
@@ -90,7 +133,7 @@ export default function ProjectEditor({ projectId, onBack }) {
       )
       .subscribe()
     return () => { supabase.removeChannel(ch) }
-  }, [projectId])
+  }, [projectId, local])
 
   // ---- Azioni stanze ----
   function addRoom(typeId) {
@@ -133,6 +176,7 @@ export default function ProjectEditor({ projectId, onBack }) {
   const selected = rooms.find((r) => r.id === selectedId)
 
   if (!loaded) {
+    if (error) return <div className="auth-wrap"><p role="alert" className="alert error">{error}</p><button className="btn" onClick={onBack}>Torna ai progetti</button></div>
     return (
       <div className="center-screen">
         <span className="spinner dark" />
@@ -144,7 +188,7 @@ export default function ProjectEditor({ projectId, onBack }) {
   return (
     <div className="app">
       <div className="topbar">
-        <button className="back" onClick={onBack} aria-label="Indietro"><ChevronLeft size={24} /></button>
+        <button className="back" onClick={leave} aria-label="Indietro"><ChevronLeft size={24} /></button>
         <span className="title">{name}</span>
         {liveEdit && (
           <span className="chip live"><Users size={12} /> aggiornato</span>
@@ -152,11 +196,17 @@ export default function ProjectEditor({ projectId, onBack }) {
       </div>
 
       <div className="screen">
+        <div className="editor-meta"><span role="status">{saveStatus || (local ? 'Su questo dispositivo' : 'Progetto condiviso')}</span><button onClick={exportCopy}>Esporta copia</button></div>
+        {error && <div role="alert" className="alert error">{error}<button className="btn secondary" onClick={save}>Riprova il salvataggio</button></div>}
         <div className="tabs">
           <button className={'tab' + (tab === 'plan' ? ' active' : '')} onClick={() => setTab('plan')}><LayoutGrid /> Planimetria</button>
           <button className={'tab' + (tab === 'mat' ? ' active' : '')} onClick={() => setTab('mat')}><Box /> Materiali</button>
           <button className={'tab' + (tab === 'sum' ? ' active' : '')} onClick={() => setTab('sum')}><Receipt /> Riepilogo</button>
+          <button className={'tab' + (tab === 'view' ? ' active' : '')} onClick={() => setTab('view')}><Box /> Vista 3D</button>
+          <button className={'tab' + (tab === 'dreams' ? ' active' : '')} onClick={() => setTab('dreams')}><Plus /> Desideri</button>
         </div>
+        {tab === 'view' && <Suspense fallback={<p>Preparo la vista 3D…</p>}><HouseView rooms={rooms} /></Suspense>}
+        {tab === 'dreams' && <DreamsPanel dreams={dreams} onChange={(id, value) => setDreams(previous => ({ ...previous, [id]: value }))} />}
 
         {tab === 'plan' && (
           <div className="fade-up">
@@ -230,11 +280,11 @@ export default function ProjectEditor({ projectId, onBack }) {
       <div className="cost-bar">
         <div className="cost-bar-inner">
           <div className="cb-left">
-            <div className="cb-label">Costo stimato</div>
+            <div className="cb-label">Stima base · extra esclusi</div>
             <div className="cb-amount num">{formatEUR(cost.total)}</div>
           </div>
-          <button className="cb-btn" onClick={() => setBuilding(true)} disabled={rooms.length === 0}>
-            <Hammer size={16} /> Costruisci
+          <button className="cb-btn" onClick={() => setTab('view')} disabled={rooms.length === 0}>
+            <Box size={16} /> Guarda in 3D
           </button>
         </div>
       </div>

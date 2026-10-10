@@ -2,6 +2,7 @@ import {useEffect,useState} from 'react'
 import {supabase,PROJECTS_TABLE} from '../lib/supabase'
 import {useAuth} from '../context/AuthContext'
 import {createLocalProject,listLocalProjects} from '../lib/localProjects'
+import ReleaseNote from './ReleaseNote'
 export default function CloudProjects({onOpen,onLocal}) {
   const {user,signOut}=useAuth();const [projects,setProjects]=useState([]),[locals,setLocals]=useState([]),[error,setError]=useState(''),[busy,setBusy]=useState(false),[loaded,setLoaded]=useState(false),[code,setCode]=useState('')
   async function load(){const {data,error}=await supabase.from(PROJECTS_TABLE).select('*').order('updated_at',{ascending:false});if(error)setError('Non riesco a leggere i progetti online: '+error.message);else setProjects(data||[]);setLoaded(true)}
@@ -11,5 +12,5 @@ export default function CloudProjects({onOpen,onLocal}) {
   return <div className="app"><header className="topbar"><span className="title">Casa Nostra · online</span><button className="btn secondary small" onClick={signOut}>Esci</button></header><main className="screen"><div className="list-head"><span className="eyebrow">I vostri progetti</span><h1>Una casa, insieme.</h1><p>Usa lo stesso account su telefono e computer. Per progettare con Asia puoi invitarla con un codice dalla casa.</p></div>{error&&<p role="alert" className="alert error">{error}</p>}{!loaded&&<p>Carico i progetti…</p>}{projects.map(p=><button className="card local-project" key={p.id} onClick={()=>onOpen(p.id)}><span><strong>{p.name}</strong><small>{p.data?.rooms?.length||0} ambienti · {p.owner===user.id?'Creato da te':'Condiviso con te'}</small></span>↗</button>)}<button className="btn accent" style={{marginTop:20}} disabled={busy} onClick={()=>create()}>Crea una villa online</button>
     {!!locals.length&&<details className="release-note"><summary>Porta online un progetto da questo dispositivo</summary><p>Viene creata una nuova copia: l’originale resta sul dispositivo.</p>{locals.map(p=><button className="btn secondary" key={p.id} disabled={busy} onClick={()=>create(p)}>{p.name}</button>)}</details>}
     {PROJECTS_TABLE==='casa_nostra_projects'&&<div className="card panel-pad"><label>Hai un invito?<input className="input" value={code} onChange={e=>setCode(e.target.value)} placeholder="Incolla il codice di condivisione"/></label><button className="btn secondary" disabled={busy||!code.trim()} onClick={join}>Apri la casa condivisa</button></div>}
-    <button className="btn secondary" style={{marginTop:20}} onClick={onLocal}>Progetti su questo dispositivo</button><details className="release-note"><summary>Novità · v2.0</summary><p>Villa completa, desideri in 3D, visita interna, confronto versioni e copie locali dei salvataggi online.</p></details></main></div>
+    <button className="btn secondary" style={{marginTop:20}} onClick={onLocal}>Progetti su questo dispositivo</button><ReleaseNote/></main></div>
 }

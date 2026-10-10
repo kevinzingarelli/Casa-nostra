@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Home, Plus, ArrowLeft } from 'lucide-react'
 import { listLocalProjects, createLocalProject, saveLocalProject } from '../lib/localProjects'
 import { validateImport } from '../lib/villa'
+import ReleaseNote from './ReleaseNote'
 export default function LocalProjects({ onOpen, onBack }) {
   const [error, setError] = useState('')
   const [state] = useState(() => { try { return { projects: listLocalProjects() } } catch (e) { return { projects: [], error: e.message } } })
@@ -19,7 +20,7 @@ export default function LocalProjects({ onOpen, onBack }) {
       <button className="btn accent" style={{ marginTop: 22 }} onClick={create} disabled={!!state.error}><Plus size={18} />{projects.length ? 'Nuovo progetto' : 'Inizia a immaginare'}</button>
       <p className="muted" style={{ marginTop: 12 }}>I nuovi progetti partono da una villa modificabile: tre livelli, giardino e 16 desideri già collocati. I tuoi progetti precedenti restano come li hai salvati.</p>
       <label className="import-label">Importa una copia del progetto<input aria-label="Importa progetto JSON" type="file" accept=".json,application/json" onChange={importFile}/></label>
-      <details className="release-note"><summary>🏡 Novità · v2.0 · 10 ottobre 2026</summary><p>Villa su tre livelli e giardino, 16 desideri in 3D, visita interna, tre stili e luce giorno/sera. Conserva e confronta le versioni. Importa le copie JSON senza sovrascrivere i progetti esistenti.</p></details>
+      <ReleaseNote/>
       <footer className="app-footer">Casa Nostra · un prodotto Kesia s.r.l.</footer>
     </main></div>
 }

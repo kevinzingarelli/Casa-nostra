@@ -1,0 +1,1362 @@
+{
+  "id": "4d7f89cd-20e7-4bc5-8d23-47f75869b43f",
+  "name": "Verifica villa · prima scheda",
+  "house_type": "villa",
+  "updated_at": "2026-10-10T12:22:56.704Z",
+  "data": {
+    "schema": 2,
+    "rooms": [
+      {
+        "id": "464f1c57-e9b5-45a8-8355-66798bf9fa74",
+        "type": "garage",
+        "name": "Garage interrato",
+        "floor": -1,
+        "x": 8,
+        "y": 8,
+        "w": 10,
+        "l": 8
+      },
+      {
+        "id": "3350f75e-e9ab-48d4-99bd-5f6089f3ac6a",
+        "type": "cinema",
+        "name": "Sala cinema",
+        "floor": -1,
+        "x": 18,
+        "y": 8,
+        "w": 8,
+        "l": 8
+      },
+      {
+        "id": "dea98f61-82d2-41a4-8dc4-9578239716f5",
+        "type": "studio",
+        "name": "Studio registrazione",
+        "floor": -1,
+        "x": 8,
+        "y": 16,
+        "w": 6,
+        "l": 7
+      },
+      {
+        "id": "81795680-9dcd-402d-91dc-956be7a44992",
+        "type": "palestra",
+        "name": "Palestra",
+        "floor": -1,
+        "x": 14,
+        "y": 16,
+        "w": 6,
+        "l": 7
+      },
+      {
+        "id": "6faa473b-ea0d-4f87-8e4e-2f95957e35b7",
+        "type": "taverna",
+        "name": "Tavernetta",
+        "floor": -1,
+        "x": 20,
+        "y": 16,
+        "w": 6,
+        "l": 7
+      },
+      {
+        "id": "f154612d-4c2e-4408-b0af-ea7c595aa799",
+        "type": "soggiorno",
+        "name": "Living",
+        "floor": 0,
+        "x": 7.5,
+        "y": 8,
+        "w": 8.5,
+        "l": 8
+      },
+      {
+        "id": "b2e2cb1a-ebd3-4b34-bc09-f40c44c22123",
+        "type": "cucina",
+        "name": "Cucina",
+        "floor": 0,
+        "x": 16,
+        "y": 8,
+        "w": 6,
+        "l": 8
+      },
+      {
+        "id": "db84d717-feac-4b24-afa3-aea177bf4dfe",
+        "type": "dispensa",
+        "name": "Dispensa",
+        "floor": 0,
+        "x": 22,
+        "y": 8,
+        "w": 4,
+        "l": 4
+      },
+      {
+        "id": "555c44d4-a7c9-4870-a9bb-4b1120e8d36e",
+        "type": "dispensa",
+        "name": "Frigorifero a stanza",
+        "floor": 0,
+        "x": 22,
+        "y": 12,
+        "w": 4,
+        "l": 4
+      },
+      {
+        "id": "88f7ab4e-50ba-4edb-9054-bbf2eb8f34ec",
+        "type": "studio",
+        "name": "Ufficio e libreria",
+        "floor": 0,
+        "x": 8,
+        "y": 16,
+        "w": 6,
+        "l": 7
+      },
+      {
+        "id": "97fd254b-dbc3-45ef-90a1-ce3b2d6d42c2",
+        "type": "ingresso",
+        "name": "Ingresso e scale",
+        "floor": 0,
+        "x": 14,
+        "y": 16,
+        "w": 8,
+        "l": 7
+      },
+      {
+        "id": "32a2b42b-54a7-4204-b14d-c7a8f4a8309d",
+        "type": "bagno",
+        "name": "Bagno ospiti",
+        "floor": 0,
+        "x": 22,
+        "y": 16,
+        "w": 4,
+        "l": 3
+      },
+      {
+        "id": "eadb33da-a916-4e9c-8b3c-068aa430af95",
+        "type": "lavanderia",
+        "name": "Lavanderia",
+        "floor": 0,
+        "x": 22,
+        "y": 19,
+        "w": 4,
+        "l": 4
+      },
+      {
+        "id": "79716759-27cf-4cce-8280-d76c3caeea47",
+        "type": "spa",
+        "name": "Spa e fiume coperto",
+        "floor": 0,
+        "x": 28,
+        "y": 8,
+        "w": 12,
+        "l": 15
+      },
+      {
+        "id": "917bfa76-bee5-47db-af11-748bca994653",
+        "type": "terrazzo",
+        "name": "Terrazzo con camino",
+        "floor": 0,
+        "x": 8,
+        "y": 25,
+        "w": 18,
+        "l": 5
+      },
+      {
+        "id": "d4e59e94-4705-4e50-9056-0736e7ea6a00",
+        "type": "camera",
+        "name": "Suite principale",
+        "floor": 1,
+        "x": 8,
+        "y": 8,
+        "w": 8,
+        "l": 8
+      },
+      {
+        "id": "0d69a700-a93f-4ad0-a480-db483827a8f4",
+        "type": "cabina",
+        "name": "Cabina armadio",
+        "floor": 1,
+        "x": 16,
+        "y": 8,
+        "w": 5,
+        "l": 4
+      },
+      {
+        "id": "f4c15195-56ba-4945-bf0d-526d36d61a48",
+        "type": "bagno",
+        "name": "Bagno suite",
+        "floor": 1,
+        "x": 21,
+        "y": 8,
+        "w": 5,
+        "l": 4
+      },
+      {
+        "id": "6a0fe1f9-393a-433e-a34b-e1292c1327da",
+        "type": "cameretta",
+        "name": "Camera bambini",
+        "floor": 1,
+        "x": 16,
+        "y": 12,
+        "w": 5,
+        "l": 4
+      },
+      {
+        "id": "14528988-e8c4-4238-be52-9bac10e5ffe4",
+        "type": "camera",
+        "name": "Camera ospiti",
+        "floor": 1,
+        "x": 21,
+        "y": 12,
+        "w": 5,
+        "l": 4
+      },
+      {
+        "id": "9ffc2148-75c1-418a-a015-0ee913bdbe7c",
+        "type": "giochi",
+        "name": "Stanza avventura",
+        "floor": 1,
+        "x": 8,
+        "y": 16,
+        "w": 6,
+        "l": 7
+      },
+      {
+        "id": "cf1fb694-58ba-4f91-aa6a-2a2c0e55d367",
+        "type": "corridoio",
+        "name": "Galleria e scale",
+        "floor": 1,
+        "x": 14,
+        "y": 16,
+        "w": 8,
+        "l": 7
+      },
+      {
+        "id": "9171d0ff-61d4-4eb9-a74a-9e708a73c01c",
+        "type": "bagno",
+        "name": "Bagno piano",
+        "floor": 1,
+        "x": 22,
+        "y": 16,
+        "w": 4,
+        "l": 3
+      },
+      {
+        "id": "23f46221-97a6-4316-b0e1-b40763025ac5",
+        "type": "piscina",
+        "name": "Piscina",
+        "floor": 2,
+        "x": 28,
+        "y": 26,
+        "w": 12,
+        "l": 6
+      },
+      {
+        "id": "f57e8776-bbe2-4c17-bf89-1709c81266ad",
+        "type": "giardino",
+        "name": "Giardino degli alberi",
+        "floor": 2,
+        "x": 5,
+        "y": 33,
+        "w": 14,
+        "l": 10
+      },
+      {
+        "id": "60fb5d2e-2b61-4c91-ab14-f89959f0049f",
+        "type": "campetto",
+        "name": "Campetto",
+        "floor": 2,
+        "x": 23,
+        "y": 34,
+        "w": 16,
+        "l": 10
+      },
+      {
+        "id": "825f2667-2af9-4130-9b55-4a11cd7fa36d",
+        "type": "orto",
+        "name": "Orto",
+        "floor": 2,
+        "x": 2,
+        "y": 8,
+        "w": 4,
+        "l": 9
+      },
+      {
+        "id": "2dd50337-4f85-463f-bd74-97f6f0f3fc8e",
+        "type": "barbecue",
+        "name": "Barbecue",
+        "floor": 2,
+        "x": 8,
+        "y": 30,
+        "w": 8,
+        "l": 3
+      },
+      {
+        "id": "bf14978f-26cc-4a0e-acd4-e90a5227cd83",
+        "type": "vialetto",
+        "name": "Vialetto di ingresso",
+        "floor": 2,
+        "x": 17,
+        "y": 2,
+        "w": 6,
+        "l": 5
+      }
+    ],
+    "dreams": {
+      "scivolo": {
+        "included": true,
+        "note": "",
+        "roomId": "97fd254b-dbc3-45ef-90a1-ce3b2d6d42c2",
+        "u": 0.2,
+        "v": 0.5,
+        "rotation": 0,
+        "scale": 1
+      },
+      "porta-segreta": {
+        "included": true,
+        "note": "",
+        "roomId": "88f7ab4e-50ba-4edb-9054-bbf2eb8f34ec",
+        "u": 0.5,
+        "v": 0.5,
+        "rotation": 0,
+        "scale": 1
+      },
+      "salotto-ribassato": {
+        "included": true,
+        "note": "",
+        "roomId": "f154612d-4c2e-4408-b0af-ea7c595aa799",
+        "u": 0.5,
+        "v": 0.5,
+        "rotation": 0,
+        "scale": 1
+      },
+      "frigo": {
+        "included": true,
+        "note": "",
+        "roomId": "555c44d4-a7c9-4870-a9bb-4b1120e8d36e",
+        "u": 0.5,
+        "v": 0.5,
+        "rotation": 0,
+        "scale": 1
+      },
+      "bonsai": {
+        "included": true,
+        "note": "Prova: vicino alla luce naturale",
+        "roomId": "cf1fb694-58ba-4f91-aa6a-2a2c0e55d367",
+        "u": 0.5,
+        "v": 0.5,
+        "rotation": 15,
+        "scale": 1
+      },
+      "avventura": {
+        "included": true,
+        "note": "",
+        "roomId": "9ffc2148-75c1-418a-a015-0ee913bdbe7c",
+        "u": 0.5,
+        "v": 0.5,
+        "rotation": 0,
+        "scale": 1
+      },
+      "vialetto": {
+        "included": true,
+        "note": "",
+        "roomId": "bf14978f-26cc-4a0e-acd4-e90a5227cd83",
+        "u": 0.5,
+        "v": 0.5,
+        "rotation": 0,
+        "scale": 1
+      },
+      "bilico": {
+        "included": true,
+        "note": "",
+        "roomId": "97fd254b-dbc3-45ef-90a1-ce3b2d6d42c2",
+        "u": 0.5,
+        "v": 0.9,
+        "rotation": 0,
+        "scale": 1
+      },
+      "fiume": {
+        "included": true,
+        "note": "",
+        "roomId": "79716759-27cf-4cce-8280-d76c3caeea47",
+        "u": 0.5,
+        "v": 0.5,
+        "rotation": 0,
+        "scale": 1
+      },
+      "scalinata": {
+        "included": true,
+        "note": "",
+        "roomId": "97fd254b-dbc3-45ef-90a1-ce3b2d6d42c2",
+        "u": 0.72,
+        "v": 0.5,
+        "rotation": 0,
+        "scale": 1
+      },
+      "baldacchino": {
+        "included": true,
+        "note": "",
+        "roomId": "d4e59e94-4705-4e50-9056-0736e7ea6a00",
+        "u": 0.5,
+        "v": 0.5,
+        "rotation": 0,
+        "scale": 1
+      },
+      "dispensa": {
+        "included": true,
+        "note": "",
+        "roomId": "db84d717-feac-4b24-afa3-aea177bf4dfe",
+        "u": 0.5,
+        "v": 0.5,
+        "rotation": 0,
+        "scale": 1
+      },
+      "prese": {
+        "included": true,
+        "note": "",
+        "roomId": "f154612d-4c2e-4408-b0af-ea7c595aa799",
+        "u": 0.9,
+        "v": 0.15,
+        "rotation": 0,
+        "scale": 1
+      },
+      "scala-albero": {
+        "included": true,
+        "note": "",
+        "roomId": "cf1fb694-58ba-4f91-aa6a-2a2c0e55d367",
+        "u": 0.5,
+        "v": 0.5,
+        "rotation": 0,
+        "scale": 1
+      },
+      "casa-albero": {
+        "included": true,
+        "note": "",
+        "roomId": "f57e8776-bbe2-4c17-bf89-1709c81266ad",
+        "u": 0.5,
+        "v": 0.5,
+        "rotation": 0,
+        "scale": 1
+      },
+      "garage-interrato": {
+        "included": true,
+        "note": "",
+        "roomId": "464f1c57-e9b5-45a8-8355-66798bf9fa74",
+        "u": 0.5,
+        "v": 0.5,
+        "rotation": 0,
+        "scale": 1
+      }
+    },
+    "materials": {},
+    "lot": 48,
+    "style": "caldo",
+    "lighting": "giorno",
+    "versions": [
+      {
+        "id": "d1e5685a-1a06-42d1-afb6-3f6630da5f72",
+        "name": "Prima proposta",
+        "created_at": "2026-10-10T12:22:32.403Z",
+        "data": {
+          "schema": 2,
+          "rooms": [
+            {
+              "id": "464f1c57-e9b5-45a8-8355-66798bf9fa74",
+              "type": "garage",
+              "name": "Garage interrato",
+              "floor": -1,
+              "x": 8,
+              "y": 8,
+              "w": 10,
+              "l": 8
+            },
+            {
+              "id": "3350f75e-e9ab-48d4-99bd-5f6089f3ac6a",
+              "type": "cinema",
+              "name": "Sala cinema",
+              "floor": -1,
+              "x": 18,
+              "y": 8,
+              "w": 8,
+              "l": 8
+            },
+            {
+              "id": "dea98f61-82d2-41a4-8dc4-9578239716f5",
+              "type": "studio",
+              "name": "Studio registrazione",
+              "floor": -1,
+              "x": 8,
+              "y": 16,
+              "w": 6,
+              "l": 7
+            },
+            {
+              "id": "81795680-9dcd-402d-91dc-956be7a44992",
+              "type": "palestra",
+              "name": "Palestra",
+              "floor": -1,
+              "x": 14,
+              "y": 16,
+              "w": 6,
+              "l": 7
+            },
+            {
+              "id": "6faa473b-ea0d-4f87-8e4e-2f95957e35b7",
+              "type": "taverna",
+              "name": "Tavernetta",
+              "floor": -1,
+              "x": 20,
+              "y": 16,
+              "w": 6,
+              "l": 7
+            },
+            {
+              "id": "f154612d-4c2e-4408-b0af-ea7c595aa799",
+              "type": "soggiorno",
+              "name": "Living",
+              "floor": 0,
+              "x": 8,
+              "y": 8,
+              "w": 8,
+              "l": 8
+            },
+            {
+              "id": "b2e2cb1a-ebd3-4b34-bc09-f40c44c22123",
+              "type": "cucina",
+              "name": "Cucina",
+              "floor": 0,
+              "x": 16,
+              "y": 8,
+              "w": 6,
+              "l": 8
+            },
+            {
+              "id": "db84d717-feac-4b24-afa3-aea177bf4dfe",
+              "type": "dispensa",
+              "name": "Dispensa",
+              "floor": 0,
+              "x": 22,
+              "y": 8,
+              "w": 4,
+              "l": 4
+            },
+            {
+              "id": "555c44d4-a7c9-4870-a9bb-4b1120e8d36e",
+              "type": "dispensa",
+              "name": "Frigorifero a stanza",
+              "floor": 0,
+              "x": 22,
+              "y": 12,
+              "w": 4,
+              "l": 4
+            },
+            {
+              "id": "88f7ab4e-50ba-4edb-9054-bbf2eb8f34ec",
+              "type": "studio",
+              "name": "Ufficio e libreria",
+              "floor": 0,
+              "x": 8,
+              "y": 16,
+              "w": 6,
+              "l": 7
+            },
+            {
+              "id": "97fd254b-dbc3-45ef-90a1-ce3b2d6d42c2",
+              "type": "ingresso",
+              "name": "Ingresso e scale",
+              "floor": 0,
+              "x": 14,
+              "y": 16,
+              "w": 8,
+              "l": 7
+            },
+            {
+              "id": "32a2b42b-54a7-4204-b14d-c7a8f4a8309d",
+              "type": "bagno",
+              "name": "Bagno ospiti",
+              "floor": 0,
+              "x": 22,
+              "y": 16,
+              "w": 4,
+              "l": 3
+            },
+            {
+              "id": "eadb33da-a916-4e9c-8b3c-068aa430af95",
+              "type": "lavanderia",
+              "name": "Lavanderia",
+              "floor": 0,
+              "x": 22,
+              "y": 19,
+              "w": 4,
+              "l": 4
+            },
+            {
+              "id": "79716759-27cf-4cce-8280-d76c3caeea47",
+              "type": "spa",
+              "name": "Spa e fiume coperto",
+              "floor": 0,
+              "x": 28,
+              "y": 8,
+              "w": 12,
+              "l": 15
+            },
+            {
+              "id": "917bfa76-bee5-47db-af11-748bca994653",
+              "type": "terrazzo",
+              "name": "Terrazzo con camino",
+              "floor": 0,
+              "x": 8,
+              "y": 25,
+              "w": 18,
+              "l": 5
+            },
+            {
+              "id": "d4e59e94-4705-4e50-9056-0736e7ea6a00",
+              "type": "camera",
+              "name": "Suite principale",
+              "floor": 1,
+              "x": 8,
+              "y": 8,
+              "w": 8,
+              "l": 8
+            },
+            {
+              "id": "0d69a700-a93f-4ad0-a480-db483827a8f4",
+              "type": "cabina",
+              "name": "Cabina armadio",
+              "floor": 1,
+              "x": 16,
+              "y": 8,
+              "w": 5,
+              "l": 4
+            },
+            {
+              "id": "f4c15195-56ba-4945-bf0d-526d36d61a48",
+              "type": "bagno",
+              "name": "Bagno suite",
+              "floor": 1,
+              "x": 21,
+              "y": 8,
+              "w": 5,
+              "l": 4
+            },
+            {
+              "id": "6a0fe1f9-393a-433e-a34b-e1292c1327da",
+              "type": "cameretta",
+              "name": "Camera bambini",
+              "floor": 1,
+              "x": 16,
+              "y": 12,
+              "w": 5,
+              "l": 4
+            },
+            {
+              "id": "14528988-e8c4-4238-be52-9bac10e5ffe4",
+              "type": "camera",
+              "name": "Camera ospiti",
+              "floor": 1,
+              "x": 21,
+              "y": 12,
+              "w": 5,
+              "l": 4
+            },
+            {
+              "id": "9ffc2148-75c1-418a-a015-0ee913bdbe7c",
+              "type": "giochi",
+              "name": "Stanza avventura",
+              "floor": 1,
+              "x": 8,
+              "y": 16,
+              "w": 6,
+              "l": 7
+            },
+            {
+              "id": "cf1fb694-58ba-4f91-aa6a-2a2c0e55d367",
+              "type": "corridoio",
+              "name": "Galleria e scale",
+              "floor": 1,
+              "x": 14,
+              "y": 16,
+              "w": 8,
+              "l": 7
+            },
+            {
+              "id": "9171d0ff-61d4-4eb9-a74a-9e708a73c01c",
+              "type": "bagno",
+              "name": "Bagno piano",
+              "floor": 1,
+              "x": 22,
+              "y": 16,
+              "w": 4,
+              "l": 3
+            },
+            {
+              "id": "23f46221-97a6-4316-b0e1-b40763025ac5",
+              "type": "piscina",
+              "name": "Piscina",
+              "floor": 2,
+              "x": 28,
+              "y": 26,
+              "w": 12,
+              "l": 6
+            },
+            {
+              "id": "f57e8776-bbe2-4c17-bf89-1709c81266ad",
+              "type": "giardino",
+              "name": "Giardino degli alberi",
+              "floor": 2,
+              "x": 5,
+              "y": 33,
+              "w": 14,
+              "l": 10
+            },
+            {
+              "id": "60fb5d2e-2b61-4c91-ab14-f89959f0049f",
+              "type": "campetto",
+              "name": "Campetto",
+              "floor": 2,
+              "x": 23,
+              "y": 34,
+              "w": 16,
+              "l": 10
+            },
+            {
+              "id": "825f2667-2af9-4130-9b55-4a11cd7fa36d",
+              "type": "orto",
+              "name": "Orto",
+              "floor": 2,
+              "x": 2,
+              "y": 8,
+              "w": 4,
+              "l": 9
+            },
+            {
+              "id": "2dd50337-4f85-463f-bd74-97f6f0f3fc8e",
+              "type": "barbecue",
+              "name": "Barbecue",
+              "floor": 2,
+              "x": 8,
+              "y": 30,
+              "w": 8,
+              "l": 3
+            },
+            {
+              "id": "bf14978f-26cc-4a0e-acd4-e90a5227cd83",
+              "type": "vialetto",
+              "name": "Vialetto di ingresso",
+              "floor": 2,
+              "x": 17,
+              "y": 2,
+              "w": 6,
+              "l": 5
+            }
+          ],
+          "dreams": {
+            "scivolo": {
+              "included": true,
+              "note": "",
+              "roomId": "97fd254b-dbc3-45ef-90a1-ce3b2d6d42c2",
+              "u": 0.2,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "porta-segreta": {
+              "included": true,
+              "note": "",
+              "roomId": "88f7ab4e-50ba-4edb-9054-bbf2eb8f34ec",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "salotto-ribassato": {
+              "included": true,
+              "note": "",
+              "roomId": "f154612d-4c2e-4408-b0af-ea7c595aa799",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "frigo": {
+              "included": true,
+              "note": "",
+              "roomId": "555c44d4-a7c9-4870-a9bb-4b1120e8d36e",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "bonsai": {
+              "included": true,
+              "note": "",
+              "roomId": "cf1fb694-58ba-4f91-aa6a-2a2c0e55d367",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "avventura": {
+              "included": true,
+              "note": "",
+              "roomId": "9ffc2148-75c1-418a-a015-0ee913bdbe7c",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "vialetto": {
+              "included": true,
+              "note": "",
+              "roomId": "bf14978f-26cc-4a0e-acd4-e90a5227cd83",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "bilico": {
+              "included": true,
+              "note": "",
+              "roomId": "97fd254b-dbc3-45ef-90a1-ce3b2d6d42c2",
+              "u": 0.5,
+              "v": 0.9,
+              "rotation": 0,
+              "scale": 1
+            },
+            "fiume": {
+              "included": true,
+              "note": "",
+              "roomId": "79716759-27cf-4cce-8280-d76c3caeea47",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "scalinata": {
+              "included": true,
+              "note": "",
+              "roomId": "97fd254b-dbc3-45ef-90a1-ce3b2d6d42c2",
+              "u": 0.72,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "baldacchino": {
+              "included": true,
+              "note": "",
+              "roomId": "d4e59e94-4705-4e50-9056-0736e7ea6a00",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "dispensa": {
+              "included": true,
+              "note": "",
+              "roomId": "db84d717-feac-4b24-afa3-aea177bf4dfe",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "prese": {
+              "included": true,
+              "note": "",
+              "roomId": "f154612d-4c2e-4408-b0af-ea7c595aa799",
+              "u": 0.9,
+              "v": 0.15,
+              "rotation": 0,
+              "scale": 1
+            },
+            "scala-albero": {
+              "included": true,
+              "note": "",
+              "roomId": "cf1fb694-58ba-4f91-aa6a-2a2c0e55d367",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "casa-albero": {
+              "included": true,
+              "note": "",
+              "roomId": "f57e8776-bbe2-4c17-bf89-1709c81266ad",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "garage-interrato": {
+              "included": true,
+              "note": "",
+              "roomId": "464f1c57-e9b5-45a8-8355-66798bf9fa74",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            }
+          },
+          "materials": {},
+          "lot": 48,
+          "style": "caldo",
+          "lighting": "giorno"
+        }
+      },
+      {
+        "id": "558e8df9-90d1-4105-8c67-cac16640462c",
+        "name": "Prima del ripristino",
+        "created_at": "2026-10-10T12:23:35.391Z",
+        "data": {
+          "schema": 2,
+          "rooms": [
+            {
+              "id": "464f1c57-e9b5-45a8-8355-66798bf9fa74",
+              "type": "garage",
+              "name": "Garage interrato",
+              "floor": -1,
+              "x": 8,
+              "y": 8,
+              "w": 10,
+              "l": 8
+            },
+            {
+              "id": "3350f75e-e9ab-48d4-99bd-5f6089f3ac6a",
+              "type": "cinema",
+              "name": "Sala cinema",
+              "floor": -1,
+              "x": 18,
+              "y": 8,
+              "w": 8,
+              "l": 8
+            },
+            {
+              "id": "dea98f61-82d2-41a4-8dc4-9578239716f5",
+              "type": "studio",
+              "name": "Studio registrazione",
+              "floor": -1,
+              "x": 8,
+              "y": 16,
+              "w": 6,
+              "l": 7
+            },
+            {
+              "id": "81795680-9dcd-402d-91dc-956be7a44992",
+              "type": "palestra",
+              "name": "Palestra",
+              "floor": -1,
+              "x": 14,
+              "y": 16,
+              "w": 6,
+              "l": 7
+            },
+            {
+              "id": "6faa473b-ea0d-4f87-8e4e-2f95957e35b7",
+              "type": "taverna",
+              "name": "Tavernetta",
+              "floor": -1,
+              "x": 20,
+              "y": 16,
+              "w": 6,
+              "l": 7
+            },
+            {
+              "id": "f154612d-4c2e-4408-b0af-ea7c595aa799",
+              "type": "soggiorno",
+              "name": "Living",
+              "floor": 0,
+              "x": 8,
+              "y": 8,
+              "w": 8,
+              "l": 8
+            },
+            {
+              "id": "b2e2cb1a-ebd3-4b34-bc09-f40c44c22123",
+              "type": "cucina",
+              "name": "Cucina",
+              "floor": 0,
+              "x": 16,
+              "y": 8,
+              "w": 6,
+              "l": 8
+            },
+            {
+              "id": "db84d717-feac-4b24-afa3-aea177bf4dfe",
+              "type": "dispensa",
+              "name": "Dispensa",
+              "floor": 0,
+              "x": 22,
+              "y": 8,
+              "w": 4,
+              "l": 4
+            },
+            {
+              "id": "555c44d4-a7c9-4870-a9bb-4b1120e8d36e",
+              "type": "dispensa",
+              "name": "Frigorifero a stanza",
+              "floor": 0,
+              "x": 22,
+              "y": 12,
+              "w": 4,
+              "l": 4
+            },
+            {
+              "id": "88f7ab4e-50ba-4edb-9054-bbf2eb8f34ec",
+              "type": "studio",
+              "name": "Ufficio e libreria",
+              "floor": 0,
+              "x": 8,
+              "y": 16,
+              "w": 6,
+              "l": 7
+            },
+            {
+              "id": "97fd254b-dbc3-45ef-90a1-ce3b2d6d42c2",
+              "type": "ingresso",
+              "name": "Ingresso e scale",
+              "floor": 0,
+              "x": 14,
+              "y": 16,
+              "w": 8,
+              "l": 7
+            },
+            {
+              "id": "32a2b42b-54a7-4204-b14d-c7a8f4a8309d",
+              "type": "bagno",
+              "name": "Bagno ospiti",
+              "floor": 0,
+              "x": 22,
+              "y": 16,
+              "w": 4,
+              "l": 3
+            },
+            {
+              "id": "eadb33da-a916-4e9c-8b3c-068aa430af95",
+              "type": "lavanderia",
+              "name": "Lavanderia",
+              "floor": 0,
+              "x": 22,
+              "y": 19,
+              "w": 4,
+              "l": 4
+            },
+            {
+              "id": "79716759-27cf-4cce-8280-d76c3caeea47",
+              "type": "spa",
+              "name": "Spa e fiume coperto",
+              "floor": 0,
+              "x": 28,
+              "y": 8,
+              "w": 12,
+              "l": 15
+            },
+            {
+              "id": "917bfa76-bee5-47db-af11-748bca994653",
+              "type": "terrazzo",
+              "name": "Terrazzo con camino",
+              "floor": 0,
+              "x": 8,
+              "y": 25,
+              "w": 18,
+              "l": 5
+            },
+            {
+              "id": "d4e59e94-4705-4e50-9056-0736e7ea6a00",
+              "type": "camera",
+              "name": "Suite principale",
+              "floor": 1,
+              "x": 8,
+              "y": 8,
+              "w": 8,
+              "l": 8
+            },
+            {
+              "id": "0d69a700-a93f-4ad0-a480-db483827a8f4",
+              "type": "cabina",
+              "name": "Cabina armadio",
+              "floor": 1,
+              "x": 16,
+              "y": 8,
+              "w": 5,
+              "l": 4
+            },
+            {
+              "id": "f4c15195-56ba-4945-bf0d-526d36d61a48",
+              "type": "bagno",
+              "name": "Bagno suite",
+              "floor": 1,
+              "x": 21,
+              "y": 8,
+              "w": 5,
+              "l": 4
+            },
+            {
+              "id": "6a0fe1f9-393a-433e-a34b-e1292c1327da",
+              "type": "cameretta",
+              "name": "Camera bambini",
+              "floor": 1,
+              "x": 16,
+              "y": 12,
+              "w": 5,
+              "l": 4
+            },
+            {
+              "id": "14528988-e8c4-4238-be52-9bac10e5ffe4",
+              "type": "camera",
+              "name": "Camera ospiti",
+              "floor": 1,
+              "x": 21,
+              "y": 12,
+              "w": 5,
+              "l": 4
+            },
+            {
+              "id": "9ffc2148-75c1-418a-a015-0ee913bdbe7c",
+              "type": "giochi",
+              "name": "Stanza avventura",
+              "floor": 1,
+              "x": 8,
+              "y": 16,
+              "w": 6,
+              "l": 7
+            },
+            {
+              "id": "cf1fb694-58ba-4f91-aa6a-2a2c0e55d367",
+              "type": "corridoio",
+              "name": "Galleria e scale",
+              "floor": 1,
+              "x": 14,
+              "y": 16,
+              "w": 8,
+              "l": 7
+            },
+            {
+              "id": "9171d0ff-61d4-4eb9-a74a-9e708a73c01c",
+              "type": "bagno",
+              "name": "Bagno piano",
+              "floor": 1,
+              "x": 22,
+              "y": 16,
+              "w": 4,
+              "l": 3
+            },
+            {
+              "id": "23f46221-97a6-4316-b0e1-b40763025ac5",
+              "type": "piscina",
+              "name": "Piscina",
+              "floor": 2,
+              "x": 28,
+              "y": 26,
+              "w": 12,
+              "l": 6
+            },
+            {
+              "id": "f57e8776-bbe2-4c17-bf89-1709c81266ad",
+              "type": "giardino",
+              "name": "Giardino degli alberi",
+              "floor": 2,
+              "x": 5,
+              "y": 33,
+              "w": 14,
+              "l": 10
+            },
+            {
+              "id": "60fb5d2e-2b61-4c91-ab14-f89959f0049f",
+              "type": "campetto",
+              "name": "Campetto",
+              "floor": 2,
+              "x": 23,
+              "y": 34,
+              "w": 16,
+              "l": 10
+            },
+            {
+              "id": "825f2667-2af9-4130-9b55-4a11cd7fa36d",
+              "type": "orto",
+              "name": "Orto",
+              "floor": 2,
+              "x": 2,
+              "y": 8,
+              "w": 4,
+              "l": 9
+            },
+            {
+              "id": "2dd50337-4f85-463f-bd74-97f6f0f3fc8e",
+              "type": "barbecue",
+              "name": "Barbecue",
+              "floor": 2,
+              "x": 8,
+              "y": 30,
+              "w": 8,
+              "l": 3
+            },
+            {
+              "id": "bf14978f-26cc-4a0e-acd4-e90a5227cd83",
+              "type": "vialetto",
+              "name": "Vialetto di ingresso",
+              "floor": 2,
+              "x": 17,
+              "y": 2,
+              "w": 6,
+              "l": 5
+            }
+          ],
+          "dreams": {
+            "scivolo": {
+              "included": true,
+              "note": "",
+              "roomId": "97fd254b-dbc3-45ef-90a1-ce3b2d6d42c2",
+              "u": 0.2,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "porta-segreta": {
+              "included": true,
+              "note": "",
+              "roomId": "88f7ab4e-50ba-4edb-9054-bbf2eb8f34ec",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "salotto-ribassato": {
+              "included": true,
+              "note": "",
+              "roomId": "f154612d-4c2e-4408-b0af-ea7c595aa799",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "frigo": {
+              "included": true,
+              "note": "",
+              "roomId": "555c44d4-a7c9-4870-a9bb-4b1120e8d36e",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "bonsai": {
+              "included": true,
+              "note": "",
+              "roomId": "cf1fb694-58ba-4f91-aa6a-2a2c0e55d367",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "avventura": {
+              "included": true,
+              "note": "",
+              "roomId": "9ffc2148-75c1-418a-a015-0ee913bdbe7c",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "vialetto": {
+              "included": true,
+              "note": "",
+              "roomId": "bf14978f-26cc-4a0e-acd4-e90a5227cd83",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "bilico": {
+              "included": true,
+              "note": "",
+              "roomId": "97fd254b-dbc3-45ef-90a1-ce3b2d6d42c2",
+              "u": 0.5,
+              "v": 0.9,
+              "rotation": 0,
+              "scale": 1
+            },
+            "fiume": {
+              "included": true,
+              "note": "",
+              "roomId": "79716759-27cf-4cce-8280-d76c3caeea47",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "scalinata": {
+              "included": true,
+              "note": "",
+              "roomId": "97fd254b-dbc3-45ef-90a1-ce3b2d6d42c2",
+              "u": 0.72,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "baldacchino": {
+              "included": true,
+              "note": "",
+              "roomId": "d4e59e94-4705-4e50-9056-0736e7ea6a00",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "dispensa": {
+              "included": true,
+              "note": "",
+              "roomId": "db84d717-feac-4b24-afa3-aea177bf4dfe",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "prese": {
+              "included": true,
+              "note": "",
+              "roomId": "f154612d-4c2e-4408-b0af-ea7c595aa799",
+              "u": 0.9,
+              "v": 0.15,
+              "rotation": 0,
+              "scale": 1
+            },
+            "scala-albero": {
+              "included": true,
+              "note": "",
+              "roomId": "cf1fb694-58ba-4f91-aa6a-2a2c0e55d367",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "casa-albero": {
+              "included": true,
+              "note": "",
+              "roomId": "f57e8776-bbe2-4c17-bf89-1709c81266ad",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            },
+            "garage-interrato": {
+              "included": true,
+              "note": "",
+              "roomId": "464f1c57-e9b5-45a8-8355-66798bf9fa74",
+              "u": 0.5,
+              "v": 0.5,
+              "rotation": 0,
+              "scale": 1
+            }
+          },
+          "materials": {
+            "fondamenta": "platea",
+            "struttura": "laterizio",
+            "tetto": "tegole",
+            "isolamento": "cappotto",
+            "finestre": "pvc2",
+            "energia": "nessuno",
+            "riscaldamento": "gas",
+            "windows": 8
+          },
+          "lot": 48,
+          "style": "naturale",
+          "lighting": "sera"
+        }
+      }
+    ]
+  }
+}

@@ -1,9 +1,8 @@
 import { useRef } from 'react'
 import { roomType, roomArea } from '../lib/rooms'
 
-const LOT = 22 // lato del lotto in metri (22m x 22m)
-
-export default function FloorPlan({ rooms, selectedId, onSelect, onMove }) {
+export default function FloorPlan({ rooms, selectedId, onSelect, onMove, lot = 22 }) {
+  const LOT = lot
   const canvasRef = useRef(null)
   const drag = useRef(null)
 
@@ -74,7 +73,7 @@ export default function FloorPlan({ rooms, selectedId, onSelect, onMove }) {
               onPointerUp={endDrag}
               onPointerCancel={endDrag}
             >
-              <span className="r-name">{t.name}</span>
+              <span className="r-name">{room.name || t.name}</span>
               <span className="r-dim">{room.w}×{room.l}m</span>
             </div>
           )

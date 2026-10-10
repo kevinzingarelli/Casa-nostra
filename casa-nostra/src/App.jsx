@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { isSupabaseConfigured } from './lib/supabase'
 import { AuthProvider, useAuth } from './context/AuthContext'
 import Login from './components/Login'
-import ProjectList from './components/ProjectList'
-import ProjectEditor from './components/ProjectEditor'
+import ProjectList from './components/CloudProjects'
+import ProjectEditor from './components/StudioEditor'
 import LocalProjects from './components/LocalProjects'
 
 function Root({ onLocal }) {
@@ -25,7 +25,7 @@ function Root({ onLocal }) {
   if (openId) {
     return <ProjectEditor projectId={openId} onBack={() => setOpenId(null)} />
   }
-  return <ProjectList onOpen={setOpenId} />
+  return <ProjectList onOpen={setOpenId} onLocal={onLocal} />
 }
 
 export default function App() {

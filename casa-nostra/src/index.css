@@ -24,6 +24,53 @@
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
+.studio { max-width: 1120px !important; }
+.studio .screen { padding-bottom: 32px; }
+.studio-heading { padding: 24px 0 10px; }
+.studio-heading h1 { font-size: clamp(27px,4vw,43px); margin: 8px 0; }
+.studio-heading p { color: #586258; }
+.studio-tabs,.floor-tabs { display:flex;flex-wrap:wrap;gap:8px;margin:18px 0; }
+.studio-tabs button { padding:12px 16px;border-radius:12px;background:#e8eae3;min-height:44px;font-weight:600; }
+.studio-tabs .active { background:#344c3b;color:#fff; }
+.floor-tabs { border-bottom:1px solid #d9dfd2;padding-bottom:16px; }
+.floor-tabs button { border:1px solid #c4cebd;padding:10px 13px;min-height:44px;border-radius:30px;font-size:13px; }
+.floor-tabs [aria-pressed=true] { background:#e2e9da;border-color:#627b56; }
+.floor-tabs small { margin-left:8px;color:#516247; }
+.version-badge { padding:4px 9px;background:#e2e9da;border-radius:14px;font-size:11px; }
+.viewer-toolbar { display:flex;justify-content:space-between;align-items:center;gap:12px;margin:20px 0; }
+.viewer-toolbar h2 { font-size:clamp(20px,3vw,28px); }
+.viewer-toolbar .btn { width:auto;flex-shrink:0; }
+.villa-canvas { height:540px;width:100%;overflow:hidden;border-radius:18px;background:#dfe6dc; }
+.villa-canvas canvas { display:block;touch-action:none; }
+.compact .villa-canvas { height:290px; margin:15px 0; }
+.viewer-options { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin:12px 0; }
+.viewer-options .btn { width:auto; }
+.viewer-options label { display:flex;align-items:center;gap:10px;min-height:44px;font-size:13px; }
+.walk-pad { display:flex;justify-content:center;gap:12px;margin:16px 0; }
+.walk-pad button { background:#344c3b;color:white;border-radius:14px;font-size:28px;min-width:54px;height:54px;touch-action:none;user-select:none; }
+.panel-pad { padding:20px;margin:16px 0; }
+.panel-pad label,.dream-placement label,.field { display:block;font-size:13px;font-weight:600; }
+.panel-pad .btn { margin-top:14px; }
+.studio select,.dream-placement select { width:100%;min-height:46px;border:1px solid #bfc8b8;border-radius:10px;padding:10px;background:#fff;color:#26382b;margin:6px 0 12px; }
+.measure-grid { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
+.measure-grid input { display:block;width:100%;min-height:44px;margin-top:6px;padding:8px;border:1px solid #bcc6b5;border-radius:8px; }
+.measure-grid input[type=range] { padding:0;accent-color:#536e44; }
+.comparison-grid { display:grid;grid-template-columns:1fr 1fr;gap:18px; }
+.comparison-grid>* { min-width:0; }
+.stats { display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px; }
+.stats dt { color:#596354;font-size:12px; }.stats dd { font-size:16px;font-weight:600; }
+.style-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:14px; }
+.style-pick { padding:14px;min-height:140px; }.style-pick span { display:block;height:75px;border-radius:8px;margin-bottom:12px; }.style-pick.active { outline:2px solid #5f7b4f; }
+.room-list { display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px; }.room-list .room-row { padding:12px;border:1px solid #d5ddcf;border-radius:10px;text-align:left; }.room-list small{display:block;color:#626c5c;}.room-list .selected{background:#e4ebdc;}
+.room-fields { margin-bottom:14px; }.room-fields>.field,.studio .field { margin-top:18px; }
+.import-label { display:block;margin-top:24px;font-size:14px; }.import-label input { width:100%;min-height:44px;margin-top:10px;font-size:13px; }
+.eyebrow { color:#60695d !important; }
+.studio .plan-canvas { max-width:700px;margin:auto; }
+.dream-placement { margin:18px 0; }
+.room-remove { margin:16px 0 24px; }.room-remove p { margin-top:8px; }
+.share-panel { padding:16px;border:1px solid var(--line);border-radius:12px;font-size:13px;margin:12px 0; }.share-panel summary { min-height:44px;cursor:pointer; }.share-panel .btn { margin:12px 0; }
+@media(max-width:600px){.villa-canvas{height:360px}.comparison-grid{grid-template-columns:1fr}.viewer-toolbar{align-items:flex-start;flex-direction:column}.style-grid{grid-template-columns:1fr}.style-pick{display:flex;align-items:center;gap:16px;min-height:100px;text-align:left}.style-pick span{width:80px;flex-shrink:0;margin:0}.room-list{grid-template-columns:1fr}.studio-tabs button{padding:10px;font-size:12px}.floor-tabs{gap:6px}.floor-tabs button{padding:8px 10px}.measure-grid{gap:10px}.studio .screen{padding-left:14px;padding-right:14px}.studio-heading p{font-size:13px}}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body, #root { height: 100%; }
